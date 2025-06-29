@@ -4,18 +4,25 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from extract_utils.fixups_lib import (
+    lib_fixups,
+)
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
 
 namespace_imports = [
+    'hardware/qcom-caf/sm8150',
+    'vendor/motorola/sm6125-common',
+    'vendor/qcom/opensource/display',
 ]
 
 module = ExtractUtilsModule(
     'sofia',
     'motorola',
     namespace_imports=namespace_imports,
+    lib_fixups=lib_fixups,
 )
 
 if __name__ == '__main__':
